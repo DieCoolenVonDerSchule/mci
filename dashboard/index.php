@@ -11,14 +11,14 @@ include_once('functions.php');
   <div class="form-group row">
     <label for="inputroom" class="col-sm-1 col-form-label">Raum:</label>
     <div class="col-sm-10">
-      <input type="room" class="form-control-lg" name="inputroom" placeholder="2.108">
+      <input type="room" class="form-control-lg" name="inputroom" placeholder="0.401">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputmatnr" class="col-sm-1 col-form-label">Martikelnummer:</label>
     <div class="col-sm-10">
-      <input type="matnr" class="form-control-lg" name="inputmatnr" placeholder="Martikelnummer">
+      <input type="matnr" class="form-control-lg" name="inputmatnr" placeholder="11132500">
     </div>
   </div>
   <div class="form-group row">
