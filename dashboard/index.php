@@ -1,12 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION['userid'])){
-  include_once ('header_loggedIn.php');
-} else {
-  include_once ('header.php');
-}
 
- include_once('functions.php');
+include_once ('header.php');
+
+include_once('functions.php');
 ?>
 
 <h2> Liste mit allen Spielen </h2>
@@ -15,42 +12,27 @@ if(isset($_SESSION['userid'])){
 
 <thead>
   <tr>
-    <td>Name</td>
-    <td>Genre</td>
-    <td>Developer</td>
-    <td>Publisher</td>
-    <td>Release Date</td>
-    <td>User Points</td>
-    <?php
-    if(isset($_SESSION['userid'])) {
-      echo '<td>Zu Favoriten hinzufügen</td>';
-    }
-    ?>
-
+    <td>Raum</td>
+    <td>Transponder</td>
+    <td>Ausgeliehende</td>
+    <td>Ausgeliehen seit</td>
+    <td>Ausgeliehen bis</td>
   </tr>
   </thead>
 
   <tbody>
 <?php
-$query = getAllGames();
+$query = getAllawardedTransponder();
 
 while ($data = mysqli_fetch_array($query)) { ?>
 
           <tr>
-            <td><?php echo $data['gamesname']; ?></td>
-            <td><?php echo $data['genre_name']; ?></td>
-            <td><?php echo $data['developersname']; ?></td>
-            <td><?php echo $data['publishersname']; ?></td>
-            <td><?php echo $data['release_date']; ?></td>
-            <td><?php echo $data['userpoints']; ?></td>
+            <td><?php //echo $data['gamesname']; ?></td>
+            <td><?php //echo $data['genre_name']; ?></td>
+            <td><?php //echo $data['developersname']; ?></td>
+            <td><?php //echo $data['publishersname']; ?></td>
+            <td><?php //echo $data['release_date']; ?></td>
 
-            <?php
-            if(isset($_SESSION['userid'])) {
-              echo '<td class="btn-group">
-                  <a type="button" class="btn btn-sm btn-outline-secondary" href="addGame.php?id='.$data['game_id'].'">Add</a>
-              </td>';
-            }
-             ?>
 
           </tr>
       <?php } ?>
