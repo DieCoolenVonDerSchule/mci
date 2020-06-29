@@ -6,39 +6,34 @@ include_once ('header.php');
 include_once('functions.php');
 ?>
 
-<h2> Liste mit allen Spielen </h2>
+<h2> Raum verleihen: </h2>
+<form method="post" class="form-group form-control-lg ">
+  <div class="form-group row">
+    <label for="inputroom" class="col-sm-1 col-form-label">Raum:</label>
+    <div class="col-sm-10">
+      <input type="room" class="form-control-lg" name="inputroom" placeholder="2.108">
+    </div>
+  </div>
 
-<table class="table table-striped table-bordered" style="width:100%">
+  <div class="form-group row">
+    <label for="inputmatnr" class="col-sm-1 col-form-label">Martikelnummer:</label>
+    <div class="col-sm-10">
+      <input type="matnr" class="form-control-lg" name="inputmatnr" placeholder="Martikelnummer">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputdate" class="col-sm-1 col-form-label">Zeitraum:</label>
+    <div class="col-sm-10">
+      <input type="von" class="form-control-lg" name="inputvon" placeholder="von">
+      <input type="bis" class="form-control-lg" name="inputbis" placeholder="bis">
+    </div>
+  </div>
+  <button formaction="ausleihen.php" type="submit"  class="btn btn-primary mb-3">Raum ausleihen</button>
+  <button formaction="berechtigung.php" type="submit"  class="btn btn-primary mb-3">Berechtigungen überprüfen</button>
 
-<thead>
-  <tr>
-    <td>Raum</td>
-    <td>Transponder</td>
-    <td>Ausgeliehende</td>
-    <td>Ausgeliehen seit</td>
-    <td>Ausgeliehen bis</td>
-  </tr>
-  </thead>
-
-  <tbody>
-<?php
-$query = getAllawardedTransponder();
-
-while ($data = mysqli_fetch_array($query)) { ?>
-
-          <tr>
-            <td><?php //echo $data['gamesname']; ?></td>
-            <td><?php //echo $data['genre_name']; ?></td>
-            <td><?php //echo $data['developersname']; ?></td>
-            <td><?php //echo $data['publishersname']; ?></td>
-            <td><?php //echo $data['release_date']; ?></td>
+</form>
 
 
-          </tr>
-      <?php } ?>
-      </tbody>
-
-  </table>
 
 
 
